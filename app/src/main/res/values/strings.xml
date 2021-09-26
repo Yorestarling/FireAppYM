@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Fire Agent App</string>
+    <string name="BtnRegister">Register</string>
+    <string name="BtnLogIn">Log In</string>
+    <string name="BtnAccessInside">Log In</string>
+    <string name="BtnLogOut">Log Out</string>
+    <string name="BtnRegisterInside">Register</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="TxtName">Name</string>
+    <string name="TxtLastName">Last Name</string>
+    <string name="TxtPhone">Phone</string>
+    <string name="TxtEmail">E-mail</string>
+    <string name="TxtGender">Register</string>
+    <string name="TxtDateOfBirth">Date of Birth</string>
+    <string name="TxtCountry">Country</string>
+    <string name="TxtState">State</string>
+    <string name="TxtAddress">Address</string>
+    <string name="BtnForgot">Forgot password?</string>
+
+
+</resources>

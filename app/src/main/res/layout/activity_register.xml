@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegisterActivity" >
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#303030"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="64dp"
+                    app:srcCompat="@drawable/firelogo" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poller_one"
+                    android:gravity="center"
+                    android:text="Register"
+                    android:textColor="#BE0101"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/txtPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtName"
+                    android:inputType="textPersonName"
+                    tools:text="Name" />
+
+                <EditText
+                    android:id="@+id/txtPersonLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtLastName"
+                    android:inputType="textPersonName"
+                    tools:text="Last Name" />
+
+                <EditText
+                    android:id="@+id/txtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtPhone"
+                    android:inputType="phone"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    tools:text="Phone Number" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <EditText
+                    android:id="@+id/txtBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtDateOfBirth"
+                    android:inputType="textPersonName"
+                    android:clickable="false"
+                    android:focusable="false"/>
+
+                <EditText
+                    android:id="@+id/txtEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtEmail"
+                    android:inputType="textEmailAddress"
+                    tools:text="E-Mail" />
+
+                <EditText
+                    android:id="@+id/txtCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtCountry"
+                    android:inputType="textPersonName"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:text="Country" />
+
+                <EditText
+                    android:id="@+id/txtState"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtState"
+                    android:inputType="textPersonName"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:text="State" />
+
+                <EditText
+                    android:id="@+id/txtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtAddress"
+                    android:inputType="textPersonName"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+                    tools:text="Address" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
