@@ -16,6 +16,8 @@
     <string name="TxtState">State</string>
     <string name="TxtAddress">Address</string>
     <string name="BtnForgot">Forgot password?</string>
+    <string name="TxtPassword">Password</string>
+    <string name="TxtRePassword">Re-password</string>
 
 
 </resources>

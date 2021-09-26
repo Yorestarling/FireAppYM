@@ -157,13 +157,37 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
-                    android:layout_marginBottom="24dp"
                     android:background="#888686"
                     android:ems="10"
                     android:hint="@string/TxtAddress"
                     android:inputType="textPersonName"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
                     tools:text="Address" />
+
+                <EditText
+                    android:id="@+id/TxtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtPassword"
+                    android:inputType="textPassword" />
+
+                <EditText
+                    android:id="@+id/TxtRePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtRePassword"
+                    android:inputType="textPassword" />
 
 
             </LinearLayout>
