@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.FireAppYM" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Fire</item>
-        <item name="colorPrimaryVariant">@color/Fire</item>
+        <item name="colorPrimary">@color/SkiesBlue</item>
+        <item name="colorPrimaryVariant">@color/SkiesBlue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -15,6 +15,6 @@
     </style>
 
     <style name="dateTimePicker" parent="android:Theme.Material.Light.Dialog">
-        <item name="android:colorAccent">@color/Fire</item>
+        <item name="android:colorAccent">@color/SkiesBlue</item>
     </style>
 </resources>

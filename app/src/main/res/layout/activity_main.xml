@@ -17,7 +17,7 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="64dp"
-            app:srcCompat="@drawable/firelogo" />
+            app:srcCompat="@drawable/firelogos" />
 
         <TextView
             android:id="@+id/textView"
@@ -28,7 +28,7 @@
             android:fontFamily="@font/poller_one"
             android:text="Fire Agent App"
             android:textAlignment="center"
-            android:textColor="#BE0101"
+            android:textColor="#3276AA"
             android:textSize="25sp" />
 
         <Space
@@ -43,8 +43,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="16dp"
-            android:background="#F77301"
-            android:backgroundTint="#F77301"
+            android:background="#FF3276AA"
+            android:backgroundTint="#FF3276AA"
             android:fontFamily="@font/poller_one"
             android:scrollbarSize="5dp"
             android:text="@string/BtnLogIn"
@@ -60,8 +60,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="16dp"
-            android:background="#F77301"
-            android:backgroundTint="#F77301"
+            android:background="#FF3276AA"
+            android:backgroundTint="#FF3276AA"
             android:fontFamily="@font/poller_one"
             android:text="@string/BtnRegister"
             android:textColor="@color/white"

@@ -10,11 +10,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="171dp"
+        android:layout_height="143dp"
         android:layout_gravity="center"
         android:layout_marginTop="64dp"
-        app:srcCompat="@drawable/firelogo" />
+        app:srcCompat="@drawable/firelogos" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,7 +24,7 @@
         android:fontFamily="@font/poller_one"
         android:gravity="center"
         android:text="Log In"
-        android:textColor="#BE0101"
+        android:textColor="@color/SkiesBlue"
         android:textSize="25dp" />
 
     <EditText
@@ -35,9 +35,10 @@
         android:layout_marginTop="64dp"
         android:layout_marginRight="16dp"
         android:background="#888686"
-        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawableStart="@drawable/ic_baseline_person_black"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -47,9 +48,10 @@
         android:layout_marginTop="24dp"
         android:layout_marginRight="16dp"
         android:background="#888686"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawableStart="@drawable/ic_baseline_lock_black"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Space
         android:layout_width="match_parent"
@@ -64,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#F77301"
+        android:background="#FF3276AA"
         android:fontFamily="@font/poller_one"
         android:text="@string/BtnAccessInside"
         android:textSize="20dp" />
@@ -77,6 +79,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="52dp"
-        android:background="#F77301"
+        android:background="#FF3276AA"
         android:text="@string/BtnForgot" />
 </LinearLayout>
