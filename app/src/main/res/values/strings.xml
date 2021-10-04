@@ -10,7 +10,7 @@
     <string name="TxtLastName">Last Name</string>
     <string name="TxtPhone">Phone</string>
     <string name="TxtEmail">E-mail</string>
-    <string name="TxtGender">Register</string>
+    <string name="TxtGender">Gender</string>
     <string name="TxtDateOfBirth">Date of Birth</string>
     <string name="TxtCountry">Country</string>
     <string name="TxtState">State</string>
@@ -18,6 +18,7 @@
     <string name="BtnForgot">Forgot password?</string>
     <string name="TxtPassword">Password</string>
     <string name="TxtRePassword">Re-password</string>
+
 
 
 </resources>

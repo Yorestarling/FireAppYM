@@ -82,14 +82,17 @@
                     tools:ignore="SpeakableTextPresentCheck"
                     tools:text="Phone Number" />
 
-                <Spinner
-                    android:id="@+id/spinner"
+                <EditText
+                    android:id="@+id/txtGenders"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
+                    android:ems="10"
+                    android:hint="@string/TxtGender"
+                    android:inputType="text"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <EditText
@@ -185,6 +188,17 @@
                     android:ems="10"
                     android:hint="@string/TxtRePassword"
                     android:inputType="textPassword" />
+
+                <Button
+                    android:id="@+id/BtnRegisterin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@color/SkiesBlue"
+                    android:text="@string/BtnRegisterInside" />
 
 
             </LinearLayout>
