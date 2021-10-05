@@ -24,94 +24,130 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/lblwelcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poller_one"
+                    android:text="Welcome"
+                    android:textAlignment="center"
+                    android:textColor="@color/SkiesBlue"
+                    android:textSize="24sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_weight="1" />
+
+                <TextView
                     android:id="@+id/txtName"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtLastName"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtPhone"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtGender"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtBirthday"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtEmailAdd"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtCountry"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtState"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtAddress"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:text="TextView" />
+                    android:fontFamily="@font/poller_one"
+                    android:text="TextView"
+                    android:textColor="@color/black" />
 
                 <Button
                     android:id="@+id/btnSignout"
@@ -122,6 +158,7 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="24dp"
                     android:background="@color/SkiesBlue"
+                    android:fontFamily="@font/poller_one"
                     android:text="@string/BtnLogOut" />
 
 

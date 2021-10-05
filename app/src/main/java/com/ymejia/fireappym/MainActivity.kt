@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        setTheme(R.style.Theme_FireAppYM)
+
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
 

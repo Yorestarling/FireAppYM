@@ -25,11 +25,11 @@ class HomeActivity : AppCompatActivity() {
 
 
         val bundle = intent.extras
-        val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
         val firstName = bundle?.getString("firstName")
         val lastName = bundle?.getString("lastName")
         val phone = bundle?.getString("phone")
+        val email = bundle?.getString("email")
         val gender = bundle?.getString("gender")
         val birthday = bundle?.getString("birthday")
         val country = bundle?.getString("country")
@@ -47,7 +47,17 @@ class HomeActivity : AppCompatActivity() {
             state ?:"",
             address ?:"",
         )
+
+
+
     }
+
+
+
+
+
+
+
 
 
     private fun setup(email: String,
@@ -77,6 +87,9 @@ class HomeActivity : AppCompatActivity() {
         binding.btnSignout.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
+
+
+
         }
 
     }

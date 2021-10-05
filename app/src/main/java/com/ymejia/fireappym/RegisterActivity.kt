@@ -74,8 +74,8 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
             }
         }
+        setup()
 
-        //setup()
     }
 
     //DatePickerFun
@@ -105,7 +105,10 @@ class RegisterActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.txtEmailAddress.text.toString(),binding.TxtPassword.text.toString())
                     .addOnCompleteListener{
                         if (it.isSuccessful){
-//                            showHome( it.result?.user?.displayName ?: "",
+                           // Toast.makeText(this, "USER Added Successfully", Toast.LENGTH_SHORT).show()
+                            showHome(
+                                it.result?.user?.email ?: "",
+//                                 ?: "",
 //                                it.result?.user?.email ?: "",
 //                                it.result?.user?.email ?: "",
 //                                it.result?.user?.email ?: "",
@@ -113,8 +116,7 @@ class RegisterActivity : AppCompatActivity() {
 //                                it.result?.user?.email ?: "",
 //                                it.result?.user?.email ?: "",
 //                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-//                                ProviderType.BASIC)
+                                ProviderType.BASIC)
                         }
                         else{
                             showAlert()
@@ -134,26 +136,28 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 
-    private fun showHome(firstName: String,
-                         lastName: String,
-                         phone: String,
+    private fun showHome(
+//        firstName: String,
+//                         lastName: String,
+//                         phone: String,
                          email: String,
-                         gender: String,
-                         birthday: String,
-                         country: String,
-                         state: String,
-                         address: String, provider: ProviderType){
+//                         gender: String,
+//                         birthday: String,
+//                         country: String,
+//                         state: String,
+//                         address: String,
+                         provider: ProviderType){
 
         val homeIntent = Intent(this,HomeActivity::class.java).apply {
-            putExtra("firstName",firstName)
-            putExtra("lastName",lastName)
-            putExtra("phone",phone)
+//            putExtra("firstName",firstName)
+//            putExtra("lastName",lastName)
+//            putExtra("phone",phone)
             putExtra("email",email)
-            putExtra("gender",gender)
-            putExtra("birthday",birthday)
-            putExtra("country",country)
-            putExtra("state",state)
-            putExtra("address",address)
+//            putExtra("gender",gender)
+//            putExtra("birthday",birthday)
+//            putExtra("country",country)
+//            putExtra("state",state)
+//            putExtra("address",address)
             putExtra("provider",provider.name)
         }
         startActivity(homeIntent)

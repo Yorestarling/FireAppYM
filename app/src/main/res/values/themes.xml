@@ -17,4 +17,9 @@
     <style name="dateTimePicker" parent="android:Theme.Material.Light.Dialog">
         <item name="android:colorAccent">@color/SkiesBlue</item>
     </style>
+
+
+    <style name="SplashTheme" parent="Theme.FireAppYM">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
 </resources>
