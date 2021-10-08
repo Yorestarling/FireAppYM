@@ -3,9 +3,11 @@ package com.ymejia.fireappym
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import com.ymejia.fireappym.databinding.ActivityHomeBinding
 
 enum class ProviderType{
@@ -24,73 +26,79 @@ class HomeActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_home)
 
 
+
+
         val bundle = intent.extras
         val provider = bundle?.getString("provider")
         val firstName = bundle?.getString("firstName")
-        val lastName = bundle?.getString("lastName")
-        val phone = bundle?.getString("phone")
         val email = bundle?.getString("email")
-        val gender = bundle?.getString("gender")
-        val birthday = bundle?.getString("birthday")
-        val country = bundle?.getString("country")
-        val state = bundle?.getString("state")
-        val address = bundle?.getString("address")
 
         setup(email ?: "",
             provider ?:"",
             firstName ?:"",
-            lastName ?:"",
-            phone ?:"",
-            gender ?:"",
-            birthday ?:"",
-            country ?:"",
-            state ?:"",
-            address ?:"",
         )
-
-
-
+        //dateProfile()
     }
-
-
-
-
-
-
-
-
 
     private fun setup(email: String,
                       provider:String,
                       firstName: String,
-                      lastName: String,
-                      phone: String,
-                      gender: String,
-                      birthDay: String,
-                      country: String,
-                      state: String,
-                      address: String){
+                      ){
 
         title="Profile"
         binding.txtName.text = firstName
-        binding.txtLastName.text = lastName
-        binding.txtPhone.text = phone
         binding.txtEmailAdd.text = email
-        binding.txtGender.text = gender
-        binding.txtBirthday.text = birthDay
-        binding.txtCountry.text = country
-        binding.txtState.text = state
-        binding.txtAddress.text = address
-
 
 
         binding.btnSignout.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
 
-
-
         }
 
     }
+
+
+
+    private fun dateProfile(){
+        val username : String = binding.txtName.text.toString()
+
+        database = FirebaseDatabase.getInstance().getReference("Users")
+        database.child(username).get().addOnSuccessListener {
+
+            if(it.exists()){
+
+                val firstName = it.child("firstName").value
+                val lastName  = it.child("lastName").value
+                val phone = it.child("phone").value
+                val email  = it.child("email").value
+                val gender = it.child("gender").value
+                val birth = it.child("birth").value
+                val country  = it.child("country").value
+                val state = it.child("state").value
+                val address  = it.child("address").value
+                val password = it.child("password").value
+                val rePassword  = it.child("rePassword").value
+
+                binding.txtName.text = firstName.toString()
+                binding.txtLastName.text = lastName.toString()
+                binding.txtPhone.text = phone.toString()
+                binding.txtEmailAdd.text = email.toString()
+                binding.txtGender.text = gender.toString()
+                binding.txtBirthday.text = birth.toString()
+                binding.txtCountry.text = country.toString()
+                binding.txtState.text = state.toString()
+                binding.txtAddress.text = address.toString()
+
+
+
+            }else{
+                Toast.makeText(this,"User Doesn't Exist",Toast.LENGTH_SHORT).show()
+
+            }
+        }.addOnFailureListener{
+            Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }

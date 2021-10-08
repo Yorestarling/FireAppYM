@@ -38,43 +38,96 @@ class RegisterActivity : AppCompatActivity() {
 
 
         binding.BtnRegisterin.setOnClickListener {
-            val firstName = binding.txtPersonName.text.toString()
-            val lastName = binding.txtPersonLastName.text.toString()
-            val phone = binding.txtPhone.text.toString()
-            val email = binding.txtEmailAddress.text.toString()
-            val gender = binding.txtGenders.text.toString()
-            val birthday = binding.txtBirth.text.toString()
-            val country = binding.txtCountry.text.toString()
-            val state = binding.txtState.text.toString()
-            val address = binding.txtAddress.text.toString()
-            val password = binding.TxtPassword.text.toString()
-            val rePassword = binding.TxtRePassword.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("Users")
+            if(binding.txtPersonName.text.isBlank()){
+                binding.txtPersonName.error = "First Name is Required"
+            }
+            else if (binding.txtPersonLastName.text.isBlank()){
+                binding.txtPersonLastName.error = "Last Name is Required"
+            }
+            else if (binding.txtPhone.text.isBlank()){
+                binding.txtPhone.error = "Phone Number is Required"
+            }
+            else if (binding.txtGenders.text.isBlank()){
+                binding.txtGenders.error = "Gender is Required"
+            }
+            else if (binding.txtBirth.text.isBlank()){
+                binding.txtBirth.error = "Birthday date is Required"
+            }
 
-            val user =
-                Users(firstName, lastName, phone, email, gender, birthday, country, state, address,password,rePassword)
-            database.child(firstName).setValue(user).addOnSuccessListener {
+            else if (binding.txtCountry.text.isBlank()){
+                binding.txtCountry.error = "Country is Required"
+            }
+            else if (binding.txtState.text.isBlank()){
+                binding.txtState.error = "State is Required"
+            }
+            else if (binding.txtAddress.text.isBlank()){
+                binding.txtAddress.error = "Address is Required"
+            }
+            else if (binding.TxtPassword.text.isBlank()){
+                binding.TxtPassword.error = "Password is Required"
+            }
+            else if (binding.TxtRePassword.text.isBlank()){
+                binding.TxtRePassword.error = "Re-Password is Required"
+            }
+            else if (binding.TxtPassword.text.toString() != binding.TxtRePassword.text.toString()){
+                binding.TxtRePassword.error = "invalid Re-password please enter again "
+            }
+            else{
 
-                binding.txtPersonName.text.clear()
-                binding.txtPersonLastName.text.clear()
-                binding.txtPhone.text.clear()
-                binding.txtEmailAddress.text.clear()
-                binding.txtGenders.text.clear()
-                binding.txtBirth.text.clear()
-                binding.txtCountry.text.clear()
-                binding.txtState.text.clear()
-                binding.txtAddress.text.clear()
-                binding.TxtPassword.text.clear()
-                binding.TxtRePassword.text.clear()
+                val firstName = binding.txtPersonName.text.toString()
+                val lastName = binding.txtPersonLastName.text.toString()
+                val phone = binding.txtPhone.text.toString()
+                val email = binding.txtEmailAddress.text.toString()
+                val gender = binding.txtGenders.text.toString()
+                val birthday = binding.txtBirth.text.toString()
+                val country = binding.txtCountry.text.toString()
+                val state = binding.txtState.text.toString()
+                val address = binding.txtAddress.text.toString()
+                val password = binding.TxtPassword.text.toString()
+                val rePassword = binding.TxtRePassword.text.toString()
+
+                database = FirebaseDatabase.getInstance().getReference("Users")
 
 
-                Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                val user =
+                    Users(firstName, lastName, phone, email, gender, birthday, country, state, address,password,rePassword)
+                database.child(firstName).setValue(user).addOnSuccessListener {
+
+
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
+                        .addOnCompleteListener{
+                            if (it.isSuccessful){
+                                Toast.makeText(this, "Now you can log in Successfully", Toast.LENGTH_SHORT).show()
+                                startActivity(Intent(this,LoginActivity::class.java))
+                                finish()
+                            }
+                            else{
+                                showAlert()
+                            }
+                        }
+
+                    binding.txtPersonName.text.clear()
+                    binding.txtPersonLastName.text.clear()
+                    binding.txtPhone.text.clear()
+                    binding.txtEmailAddress.text.clear()
+                    binding.txtGenders.text.clear()
+                    binding.txtBirth.text.clear()
+                    binding.txtCountry.text.clear()
+                    binding.txtState.text.clear()
+                    binding.txtAddress.text.clear()
+                    binding.TxtPassword.text.clear()
+                    binding.TxtRePassword.text.clear()
+
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Register Failed", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-        setup()
+    }
+
+
+    private fun dateValidated(){
 
     }
 
@@ -94,8 +147,6 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun setup() {
         title = "Register"
 
@@ -105,18 +156,21 @@ class RegisterActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.txtEmailAddress.text.toString(),binding.TxtPassword.text.toString())
                     .addOnCompleteListener{
                         if (it.isSuccessful){
-                           // Toast.makeText(this, "USER Added Successfully", Toast.LENGTH_SHORT).show()
-                            showHome(
-                                it.result?.user?.email ?: "",
-//                                 ?: "",
+                            Toast.makeText(this, "USER Added Successfully", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this,LoginActivity::class.java))
+                            finish()
+                        //
+                        //                            showHome(
 //                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-//                                it.result?.user?.email ?: "",
-                                ProviderType.BASIC)
+////                                 ?: "",
+////                                it.result?.user?.email ?: "",
+////                                it.result?.user?.email ?: "",
+////                                it.result?.user?.email ?: "",
+////                                it.result?.user?.email ?: "",
+////                                it.result?.user?.email ?: "",
+////                                it.result?.user?.email ?: "",
+////                                it.result?.user?.email ?: "",
+//                                ProviderType.BASIC)
                         }
                         else{
                             showAlert()
@@ -133,34 +187,6 @@ class RegisterActivity : AppCompatActivity() {
         builder.setPositiveButton("Accept",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
-    }
-
-
-    private fun showHome(
-//        firstName: String,
-//                         lastName: String,
-//                         phone: String,
-                         email: String,
-//                         gender: String,
-//                         birthday: String,
-//                         country: String,
-//                         state: String,
-//                         address: String,
-                         provider: ProviderType){
-
-        val homeIntent = Intent(this,HomeActivity::class.java).apply {
-//            putExtra("firstName",firstName)
-//            putExtra("lastName",lastName)
-//            putExtra("phone",phone)
-            putExtra("email",email)
-//            putExtra("gender",gender)
-//            putExtra("birthday",birthday)
-//            putExtra("country",country)
-//            putExtra("state",state)
-//            putExtra("address",address)
-            putExtra("provider",provider.name)
-        }
-        startActivity(homeIntent)
     }
 
 
