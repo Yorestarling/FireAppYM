@@ -64,50 +64,6 @@ class RegisterActivity : AppCompatActivity() {
             return super.onCreateOptionsMenu(menu)
         }
 
-
-    private fun setup() {
-        title = "Register"
-
-        binding.BtnRegisterin.setOnClickListener{
-            if (binding.txtEmailAddress.text.isNotEmpty() && binding.TxtPassword.text.isNotEmpty()){
-
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.txtEmailAddress.text.toString(),binding.TxtPassword.text.toString())
-                    .addOnCompleteListener{
-                        if (it.isSuccessful){
-                            Toast.makeText(this, "USER Added Successfully", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this,LoginActivity::class.java))
-                            finish()
-                        //
-                        //                            showHome(
-//                                it.result?.user?.email ?: "",
-////                                 ?: "",
-////                                it.result?.user?.email ?: "",
-////                                it.result?.user?.email ?: "",
-////                                it.result?.user?.email ?: "",
-////                                it.result?.user?.email ?: "",
-////                                it.result?.user?.email ?: "",
-////                                it.result?.user?.email ?: "",
-////                                it.result?.user?.email ?: "",
-//                                ProviderType.BASIC)
-                        }
-                        else{
-                            showAlert()
-                        }
-                    }
-            }
-        }
-    }
-
-    private fun showAlert(){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("An Authentication Error")
-        builder.setPositiveButton("Accept",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
-
-
     private fun register() {
 
 
@@ -143,13 +99,17 @@ class RegisterActivity : AppCompatActivity() {
             }else if(TextUtils.isEmpty(binding.TxtPassword.text.toString())) {
                 binding.TxtPassword.setError("Please enter Password ")
                 return@setOnClickListener
+            }else if (binding.TxtPassword.text.toString().length <= 5) {
+                binding.TxtPassword.error = "The password must be at least 6 characters"
+                return@setOnClickListener
             }else if(TextUtils.isEmpty(binding.TxtRePassword.text.toString())) {
                 binding.TxtRePassword.setError("Please enter Re-password ")
                 return@setOnClickListener
-            }else if (binding.TxtPassword.text.toString() != binding.TxtRePassword.text.toString()){
+            }else if (binding.TxtPassword.text.toString() != binding.TxtRePassword.text.toString()) {
                 binding.TxtRePassword.error = "invalid Re-password please enter again "
                 return@setOnClickListener
             }
+
 
 
 

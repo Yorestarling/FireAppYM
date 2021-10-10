@@ -34,6 +34,12 @@
                     android:textColor="@color/SkiesBlue"
                     android:textSize="24sp" />
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    app:srcCompat="@drawable/ingimage" />
+
                 <TextView
                     android:id="@+id/lblwelcome2"
                     android:layout_width="match_parent"
@@ -45,36 +51,35 @@
                     android:textColor="@color/SkiesBlue"
                     android:textSize="20sp" />
 
-                <Space
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/txtName"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
-                    android:background="#888686"
-                    android:fontFamily="@font/poller_one"
-                    android:text="TextView"
-                    android:textColor="@color/black" />
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtLastName"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginRight="16dp"
-                    android:background="#888686"
-                    android:fontFamily="@font/poller_one"
-                    android:text="TextView"
-                    android:textColor="@color/black" />
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:background="#888686"
+                        android:fontFamily="@font/poller_one"
+                        android:text="TextView"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/txtLastName"
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="24dp"
+                        android:background="#888686"
+                        android:fontFamily="@font/poller_one"
+                        android:text="TextView"
+                        android:textColor="@color/black" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/txtPhone"
@@ -124,17 +129,34 @@
                     android:text="TextView"
                     android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/txtCountry"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
-                    android:background="#888686"
-                    android:fontFamily="@font/poller_one"
-                    android:text="TextView"
-                    android:textColor="@color/black" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtCountry"
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginRight="16dp"
+                        android:background="#888686"
+                        android:fontFamily="@font/poller_one"
+                        android:text="TextView"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/txtAddress"
+                        android:layout_width="170dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:background="#888686"
+                        android:fontFamily="@font/poller_one"
+                        android:text="TextView"
+                        android:textColor="@color/black" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/txtState"
@@ -148,24 +170,16 @@
                     android:text="TextView"
                     android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/txtAddress"
+                <Space
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginRight="16dp"
-                    android:background="#888686"
-                    android:fontFamily="@font/poller_one"
-                    android:text="TextView"
-                    android:textColor="@color/black" />
+                    android:layout_height="27dp"
+                    android:layout_weight="1" />
 
                 <Button
                     android:id="@+id/btnSignout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="24dp"
                     android:background="@color/SkiesBlue"
