@@ -18,6 +18,7 @@
     <string name="BtnForgot">Forgot password?</string>
     <string name="TxtPassword">Password</string>
     <string name="TxtRePassword">Re-password</string>
-
+    <string name="btnSubmit">SUBMIT</string>
+    <string name="edUserId">USER ID: </string>
 
 </resources>

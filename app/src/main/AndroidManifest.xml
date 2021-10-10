@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FireAppYM">
         <activity
+            android:name=".ForgotActivity"
+            android:exported="true" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true" />
         <activity

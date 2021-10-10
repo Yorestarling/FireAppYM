@@ -34,6 +34,17 @@
                     android:textColor="@color/SkiesBlue"
                     android:textSize="24sp" />
 
+                <TextView
+                    android:id="@+id/lblwelcome2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poller_one"
+                    android:text="USER INFORMATION"
+                    android:textAlignment="center"
+                    android:textColor="@color/SkiesBlue"
+                    android:textSize="20sp" />
+
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="48dp"

@@ -37,39 +37,26 @@ class LoginActivity : AppCompatActivity() {
 
         binding.BtnForgot.setOnClickListener {
 
-            val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-            builder.setTitle("Forgot Password")
-            val view: View = layoutInflater.inflate(R.layout.dialog_forgot_password, null)
 
+            startActivity(Intent(this,ForgotActivity::class.java))
 
-            builder.setView(view)
-            builder.setPositiveButton("Reset", DialogInterface.OnClickListener { _, _ -> })
-
-
-            builder.setNegativeButton("Close", DialogInterface.OnClickListener { _, _ -> })
-            builder.show()
+//            val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+//            builder.setTitle("Forgot Password")
+//            val view: View = layoutInflater.inflate(R.layout.dialog_forgot_password, null)
+//
+//
+//            builder.setView(view)
+//            builder.setPositiveButton("Reset", DialogInterface.OnClickListener { _, _ -> })
+//
+//
+//            builder.setNegativeButton("Close", DialogInterface.OnClickListener { _, _ -> })
+//            builder.show()
         }
 
 
     }
 
-//    private fun forgot_password(username : EditText){
-//
-//        if (username.text.toString().isNotEmpty()){
-//            return
-//        }
-//        if (!Patterns.EMAIL_ADDRESS.matcher(binding.editTextEmail.text.toString()).matches()){
-//            binding.editTextEmail.error = "Invalid Email"
-//        }
-//        else{
-//            auth.sendPasswordResetEmail(username.text.toString())
-//                .addOnCompleteListener{task ->
-//                    if(task.isSuccessful){
-//                        Toast.makeText(this,"Email sent",Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//        }
-//    }
+
 
 
     private fun setup() {
@@ -85,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             showHome(it.result?.user?.email ?:"",
-                                binding.editTextEmail.text.toString()?:"",
+                                it.result?.user?.uid ?:"",
                                 ProviderType.BASIC)
 
                            // startActivity(Intent(this,HomeActivity::class.java))
@@ -123,11 +110,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    private fun showHome(email: String,firstName: String, provider: ProviderType) {
+    private fun showHome(email: String,usersId: String, provider: ProviderType) {
 
         val homeIntent = Intent(this, HomeActivity::class.java).apply {
             putExtra("email", email)
-            putExtra("firstName", firstName)
+            putExtra("UserId", usersId)
             putExtra("provider", provider.name)
         }
         startActivity(homeIntent)
