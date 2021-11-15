@@ -3,6 +3,7 @@ package com.ymejia.fireappym
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.provider.ContactsContract
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -10,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.ymejia.fireappym.databinding.ActivityHomeBinding
+import com.ymejia.fireappym.util.LoadingDialog
 
 enum class ProviderType{
     BASIC
@@ -35,6 +37,18 @@ class HomeActivity : AppCompatActivity() {
         databaseReference = databases?.reference!!.child("Users")
 
         loadProfile()
+
+
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed(object :Runnable{
+
+            override fun run() {
+                loading.isDismiss()
+            }
+
+        },1000)
 
     }
 

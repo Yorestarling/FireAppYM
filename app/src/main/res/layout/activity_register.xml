@@ -8,7 +8,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         >
 
 
@@ -103,11 +102,11 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginRight="16dp"
                     android:background="#888686"
-                    android:ems="10"
-                    android:hint="@string/TxtDateOfBirth"
-                    android:inputType="textPersonName"
                     android:clickable="false"
-                    android:focusable="false"/>
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="@string/TxtDateOfBirth"
+                    android:inputType="textPersonName" />
 
                 <EditText
                     android:id="@+id/txtEmailAddress"

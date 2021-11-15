@@ -2,10 +2,12 @@ package com.ymejia.fireappym
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.FirebaseDatabase
 import com.ymejia.fireappym.databinding.ActivityMainBinding
+import com.ymejia.fireappym.util.LoadingDialog
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity() {
             val showReg = Intent(Intent(this,RegisterActivity::class.java))
             startActivity(showReg)
         }
+
+
 
     }
 }

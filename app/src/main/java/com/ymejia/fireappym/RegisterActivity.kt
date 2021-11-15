@@ -3,6 +3,7 @@ package com.ymejia.fireappym
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.TextUtils
 import android.view.Menu
 import android.widget.ArrayAdapter
@@ -16,6 +17,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.ymejia.fireappym.databinding.ActivityMainBinding
 import com.ymejia.fireappym.databinding.ActivityRegisterBinding
+import com.ymejia.fireappym.util.LoadingDialog
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -46,6 +48,8 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.txtBirth.setOnClickListener { showDatePicker() }
         register()
+
+
     }
 
         //DatePickerFun
@@ -131,6 +135,8 @@ class RegisterActivity : AppCompatActivity() {
                         currentUSerDb?.child("Repassword")?.setValue(binding.TxtRePassword.text.toString())
 
                         Toast.makeText(this@RegisterActivity, "Registration Success. ", Toast.LENGTH_LONG).show()
+
+
                         finish()
 
                     } else {

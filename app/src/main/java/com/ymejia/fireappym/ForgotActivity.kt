@@ -19,7 +19,6 @@ class ForgotActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_forgot)
 
 
-
         binding.btnsutmit.setOnClickListener{
             val email: String = binding.txtemail.text.toString().trim{it <= ' '}
             if(email.isEmpty())
@@ -41,7 +40,7 @@ class ForgotActivity : AppCompatActivity() {
                         }
                     }
             }
-        }
+        } 
 
     }
 }
